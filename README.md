@@ -17,14 +17,14 @@ Space Flight News foi desenvolvido para retornar sobre as novidades da nossa gal
 
 após clonar rode os seguintes comandos (desenvolvimento):
 
-    npm install
-    npm run dev
+    npm install ou yarn install
+    npm run dev ou yarn dev
 
 comandos para produção:
 
-    npm install
-    npm run build
-    npm run start
+    npm install ou yarn install
+    npm run build ou yarn build
+    npm run start ou yarn start
 
 
 

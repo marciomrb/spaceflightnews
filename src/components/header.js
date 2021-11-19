@@ -22,9 +22,9 @@ export default function Header({order, setOrder} = props) {
   return (
     <header>
       <Container>
-        <Form className="d-flex justify-content-end" onSubmit={handleBusca}>
-          <Row className="d-flex justify-content-end align-items-center forms">
-            <Col xs="auto">
+        <Form className="d-flex justify-content-lg-end" onSubmit={handleBusca}>
+          <Row className="d-flex justify-content-lg-end align-items-lg-center forms">
+            <Col xs="6" md="auto" lg="auto">
               <Form.Label htmlFor="inlineFormInputGroup" visuallyHidden>
                 Search
               </Form.Label>
@@ -34,7 +34,7 @@ export default function Header({order, setOrder} = props) {
               </InputGroup>
             </Col>
 
-            <Col xs="auto">
+            <Col xs="6" md="auto" lg="auto">
               <InputGroup>
                 <DropdownButton
                   variant="outline-secondary"

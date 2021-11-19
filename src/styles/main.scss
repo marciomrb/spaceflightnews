@@ -158,3 +158,23 @@ button.btn-loadmore {
     background-color: $color3;
   }
 }
+
+@media(max-width: 768px) {  
+  
+  ul.content {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 10px;
+    margin: 0;
+    li {
+      flex-direction: column;
+      &:nth-child(2n) {
+        flex-direction: column;
+      }
+      img.imgCard {
+        max-width: 100%;
+        height: 200px;
+      }
+    }
+  }
+}

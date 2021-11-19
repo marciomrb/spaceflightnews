@@ -22,6 +22,12 @@ export default function Home({post, order} = props) {
   const firstUpdate = useRef(true);
   const start = useRef(0);
 
+  
+  const replaceImgWithError = e => {
+    e.target.onerror = null;
+    e.target.src = '/space.jpg';
+  };
+
   const getPosts = () => {
     setLoading(true);
     fetch(`https://api.spaceflightnewsapi.net/v3/articles?_limit=10&_start=${start.current}&_sort=id:${order}`)
@@ -62,7 +68,7 @@ export default function Home({post, order} = props) {
           {posts
             .map((item, i) => (
               <li key={i}>
-                <img src={item?.imageUrl} alt={item?.title} className="imgCard" />
+                <img src={item?.imageUrl} alt={item?.title} className="imgCard" onError={replaceImgWithError}/>
                 <div className="boxInfo">
                   <div className="infos">
                     <h2>{item?.title}</h2>

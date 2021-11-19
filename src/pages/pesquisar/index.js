@@ -16,6 +16,11 @@ export default function Pesquisa({ postsInitial, order, term } = props) {
   const firstUpdate = useRef(true);
   const start = useRef(0);
 
+  const replaceImgWithError = e => {
+    e.target.onerror = null;
+    e.target.src = '/space.jpg';
+  };
+
   const getPosts = () => {
     setLoading(true);
     fetch(`https://api.spaceflightnewsapi.net/v3/articles?_limit=10&_start=${start.current}&_sort=id:${order}&title_contains=${term}`)
@@ -60,12 +65,8 @@ export default function Pesquisa({ postsInitial, order, term } = props) {
           <div className="alert alert-info mt-3 text-center">Exibindo resultados para: <strong>{term}</strong></div>
         {posts
           .map((item, i) => (
-            <li key={i}>
-              {item?.imageUrl ?
-              <img src={item?.imageUrl} alt={item?.title} className="imgCard" />
-              : 
-              <img src="/placeholder.png" alt={item?.title} className="imgCard" />
-              }
+            <li key={i}>        
+              <img src={item?.imageUrl} alt={item?.title} className="imgCard" onError={replaceImgWithError}/>             
               <div className="boxInfo">
                 <div className="infos">
                   <h2>{item?.title}</h2>
@@ -100,7 +101,7 @@ export default function Pesquisa({ postsInitial, order, term } = props) {
 export async function getServerSideProps(context) {
 
   const { term, order } = context.query;
-  
+
   const response = await fetch(`https://api.spaceflightnewsapi.net/v3/articles?_limit=10&_start=0&title_contains=${term}&_sort=id:${order ?? 'DESC'}`);
   const data = await response.json();
 

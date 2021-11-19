@@ -54,7 +54,7 @@ export default function Home({post, order} = props) {
   }, [order]);
 
   useEffect(() => {
-    router.replace({ pathname: '/', query: (order == 'ASC' ? { order: order } : {})});
+    router.replace({ pathname: '/', query: (order == 'ASC' ? { order: order } : {})}, undefined, { shallow: true });
   }, [order]);
 
 

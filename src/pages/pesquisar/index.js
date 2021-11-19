@@ -38,7 +38,7 @@ export default function Pesquisa({ postsInitial, order, term } = props) {
   }
 
   useEffect(() => {
-    router.replace({ pathname: '/pesquisar', query: { term: term, order: order }});
+    router.replace({ pathname: '/pesquisar', query: { term: term, order: order }}, undefined, { shallow: true });
   }, [order]);
 
   useEffect(() => {

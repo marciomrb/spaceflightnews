@@ -86,7 +86,7 @@ export default function Home({post, order} = props) {
 
         <Row>
           <Col md={12} className="d-flex justify-content-center align-items-center my-3">
-            <button className="btn btn-loadmore" onClick={handleCarregarMais}>{loading ? 'Carregando...' : 'Carregar Mais'}</button>
+            <button className="btn btn-loadmore" onClick={handleCarregarMais} disabled={loading}>{loading ? 'Carregando...' : 'Carregar Mais'}</button>
           </Col>
         </Row>
       </Container>

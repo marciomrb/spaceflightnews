@@ -56,7 +56,7 @@ export default function Pesquisa({ postsInitial, order, term } = props) {
   return (
     <>
       <Head>
-        <title>Search: {term}</title>
+        <title>Space Flight News | Search: {term}</title>
       </Head>
       <Container>
           {posts.length >= 1 ?    
@@ -83,7 +83,7 @@ export default function Pesquisa({ postsInitial, order, term } = props) {
       </ul> 
       <Row>
         <Col md={12} className="d-flex justify-content-center align-items-center my-3">
-          {!acabou ? <button className="btn btn-loadmore" onClick={handleCarregarMais}>{loading ? 'Carregando...' : 'Carregar Mais'}</button>
+          {!acabou ? <button className="btn btn-loadmore" onClick={handleCarregarMais} disabled={loading}>{loading ? 'Carregando...' : 'Carregar Mais'}</button>
           : <div className="alert alert-warning">Não há mais resultados para esta pesquisa</div>}
         </Col>
       </Row>

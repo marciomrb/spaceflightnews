@@ -16,19 +16,29 @@ você pode acessar a demo da pagina [nesse link](https://spaceflightnews.vercel.
 - SASS
 - Moment JS  
 
-## Como usar e Instalar o Projeto  
+## Como usar e Instalar o Projeto
+  
 
     git clone https://github.com/marciomrb/spaceflightnews.git
 
-após clonar rode os seguintes comandos (desenvolvimento):  
+  
+
+após clonar rode os seguintes comandos (desenvolvimento):
+  
 
     npm install ou yarn install    
-    npm run dev ou yarn dev  
+    npm run dev ou yarn dev
+  
 
 comandos para produção:
   
     npm install ou yarn install
     npm run build ou yarn build
-    npm run start ou yarn start  
+    npm run start ou yarn start
+
+  
+  ## video loom
+   para ver o video [clique aqui](https://www.loom.com/share/5bfe35b595cb4dd99bc53155470bb749)
+  
 
 **challenge by coodesh**
